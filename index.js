@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { MONGODB_URI } = require("./config");
 const RegisterRoute = require("./routes/api/register");
+const LoginRoute = require("./routes/api/login");
 const path = require("path");
 
 const app = express();
@@ -23,6 +24,7 @@ mongoose
 
 app.use("/", express.static(path.join(__dirname, "static")));
 app.use("/api/register", RegisterRoute);
+app.use("/api/login", LoginRoute);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`App is running on http://localhost:${PORT}`);
