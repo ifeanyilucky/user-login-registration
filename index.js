@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const { MONGODB_URI } = require("./config");
 const RegisterRoute = require("./routes/api/register");
 const path = require("path");
-const UserSchema = require("./models/user");
 
 const app = express();
 app.use(bodyParser.json());
